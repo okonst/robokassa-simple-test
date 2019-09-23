@@ -8,13 +8,13 @@ require('config.php');
 
 use Controllers\Robokassa;
 
-// Робокасса контроллер
-$robokassa = new Robokassa;
-
 // Обработчик ошибок Whoops (https://github.com/filp/whoops)
 $whoops = new \Whoops\Run;
 $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+
+// Робокасса контроллер
+$robokassa = new Robokassa;
 
 // Роутер Klein (https://github.com/klein/klein.php)
 $router = new \Klein\Klein();

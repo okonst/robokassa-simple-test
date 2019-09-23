@@ -1,4 +1,4 @@
 /vendor
-/database
+/database/sqlite.db
 composer.lock
 
