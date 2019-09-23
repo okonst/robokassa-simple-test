@@ -85,6 +85,11 @@ $router->respond(['GET', 'POST'], '/service/OpState', function ($request, $respo
 	$response->body($xml);
 });
 
+// 404
+$router->onHttpError(function ($code, $router) {
+    if ($code == 404) $router->response()->body("Robokassa-Simple-Test: Page not found (error 404).<br/> Didn't you forget to direct your test domain to root folder?");
+});
+
 
 $router->dispatch();
 

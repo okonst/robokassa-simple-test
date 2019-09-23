@@ -43,7 +43,9 @@ class Robokassa{
 	 *	@param int $inv_id - id платежа (InvId)
 	 */
 	public function handlePayment($inv_id){
+		if(!$inv_id) throw new \Exception("InvId parameter is required.");
 		$payment = $this->payStorage->getPayment($inv_id);
+		if(!$payment) throw new \Exception("Payment with InvId #$inv_id not found");
 		$payment['payload'] = unserialize($payment['payload']);
 		// Форма для апдейта статуса
 		$statusForm = $this->getStatusForm($payment);
