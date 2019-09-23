@@ -1,0 +1,21 @@
+{
+    "name": "okonst/robokassa-simple-test",
+    "description": "Simple test system of integration with Robokassa payment gateway",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Konstantin Ovchar",
+            "email": "okonst@mail.ru"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1",
+        "filp/whoops": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "controllers"
+        }
+    }
+}
