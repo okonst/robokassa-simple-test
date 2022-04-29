@@ -125,7 +125,6 @@ class Payment{
 	 */
 	public function verifySignature($params, $pass = 'validationPass'){
 		// основные параметры
-    	//$str = "$sum:$orderId:$merchantPass2";
     	$str = vsprintf('%s:%01.2f:%u:%s:%s', [
     		MERCHANT_LOGIN,
             $params['OutSum'],
@@ -155,7 +154,8 @@ class Payment{
 	 */
 	public function makeSignature($params, $pass = 'validationPass'){
 		
-		$str = vsprintf('%01.2f:%u:%s', [
+		//$str = vsprintf('%01.2f:%u:%s', [
+		$str = vsprintf('%s:%u:%s', [
             $params['OutSum'],
             $params['InvId'],
             ($pass == 'validationPass' ? VALIDATION_PASS : PAYMENT_PASS)
